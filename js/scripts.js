@@ -6,7 +6,7 @@ FSJS project 4 -
 /******************************************
  * Global Variables
  ******************************************/
-const randomUserURL = 'https://randomuser.me/api/?results=12&inc=picture,name,email,location,phone,dob&nat=au,br,ca,ch,de,dk,es,fi,fr,gb,ie,no,nl,nz,tr,us';
+const randomUserURL = 'https://randomuser.me/api/?results=12&inc=picture,name,email,location,phone,dob&nat=us';
 const gallery = document.querySelector('#gallery');
 let employeeArray = [];
 let searchEmployeeArray = [];
@@ -74,7 +74,7 @@ const makeModalDiv = (i) => {
   let modalDIV = document.createElement('div');
   modalDIV.classList.add('modal-container');
   let dob = array[i].dob.date.substring(0, 10);
-  dob = dob.split('-')[1] + '-' + dob.split('-')[2] + '-' + dob.split('-')[0];
+  dob = dob.split('-')[1] + '/' + dob.split('-')[2] + '/' + dob.split('-')[0].slice(-2);
   modalDIV.innerHTML = `
   <div class="modal">
     <button type="button" id="modal-close-btn" class="modal-close-btn"><strong>X</strong></button>
